@@ -31,8 +31,9 @@ public class MessageCharacterRule implements ValidationRule {
     private static List<Character> getAllCharactersInRange(Character startCharRange, Character endCharRange){
         List<Character> characterList = new ArrayList<>();
         Character temp = startCharRange;
-        while (++temp != endCharRange){
+        while (temp != endCharRange + 1){
             characterList.add(temp);
+            temp++;
         }
         return characterList;
     }
