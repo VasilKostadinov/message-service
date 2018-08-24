@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class PropertiesConfigMessageFactory implements MessageFactory{
+public class PropertiesConfigMessageFactory implements MessageFactory {
 
     private String fileMappingPath;
     private Map<String, Class<? extends AbstractMessage>> messageMappings;
@@ -40,7 +40,7 @@ public class PropertiesConfigMessageFactory implements MessageFactory{
 
     @Override
     public AbstractMessage createMessage(int id, String type, String payLoad, LocalDateTime createdAt) {
-        return createInstanceWithArgs(type,id,type,payLoad,createdAt);
+        return createInstanceWithArgs(type,id,payLoad,createdAt);
     }
 
     private AbstractMessage createInstanceWithArgs(String type,Object... params){
